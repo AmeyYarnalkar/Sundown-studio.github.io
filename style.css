@@ -1,0 +1,753 @@
+@font-face {
+    font-family: "displayRoman";
+    src: url(./NeueHaasDisplayRoman.ttf);
+}
+
+@font-face {
+    font-family: "displayLight";
+    src: url(./NeueHaasDisplayLight.ttf);
+}
+
+@font-face {
+    font-family: "displayMedium";
+    src: url(./NeueHaasDisplayMediu.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: displayMedium;
+}
+
+html,body {
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    position: relative;
+    z-index: 10;
+}
+*::selection {
+    background-color: #FE822A;
+    color: white;
+ }
+
+#main #page1 {
+    padding: 0 2vw;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #EFEAE3;
+    position: relative;
+ 
+}
+
+nav {
+    padding: 2vw 0vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav #nav-part2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1vw;
+}
+
+nav #nav-part2 h4 {
+    padding: 10px 20px;
+    border: 1px solid #3e3b3bb6;
+    border-radius: 50px;
+    position: relative;
+    transition: all ease 0.4s;
+    font-weight: 400;
+    font-size: 17px;
+    font-family: displayRoman;
+    overflow: hidden; 
+}
+
+nav #nav-part2 h4::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition: all ease 0.4s;
+}
+
+nav #nav-part2 h4:hover::after {
+    bottom: 0%;
+    border-radius: 0%;
+
+}
+
+nav #nav-part2 a {
+    text-decoration: none;
+    color: #000000;
+    z-index: 9;
+    position: relative;
+}
+
+nav #nav-part2 h4:hover a {
+    color: #ffffff;
+}
+
+/*
+Here fist H4 is made then for H4 a pesudo element is made on that an anchor tag is made with  higher index, the hover effect is made the important is that the overflow over the h4 is made hidden
+*/
+
+#page1 #centre {
+    height: 75vh;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid #3f393975;
+    padding-bottom: 2vw;
+}
+
+#page1 #centre #left {
+    width: 30vw;
+    font-size: 1.9vw;
+    font-family: displayMedium;
+    font-weight: 600;
+    line-height: 1;
+}
+
+#page1 #centre #right {
+    font-size: 5.3vw;
+    font-family: displayMedium;
+    line-height: 0.8;
+    text-align: right;
+    font-weight: 500;
+}
+
+#page1 #hero-shape {
+    position: absolute;
+    right: 0;
+    top: 84vh;
+    width: 46vw;
+    height: 36vw;
+    /* filter: blur(20px); */
+   
+}
+
+#hero-1 {
+    width: 100%;
+    height: 100%;
+    background-color: #FE330A;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    filter: blur(20px);
+    position: absolute;
+}
+
+
+#hero-2 {
+    width: 30vw;
+    height: 30vw;
+    background-color: #FE330A;
+    border-radius: 50%;
+    filter: blur(20px);
+    position: absolute;
+    animation-name: shapeanime;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+#hero-3 {
+    width: 30vw;
+    height: 30vw;
+    background-color: #FE330A;
+    border-radius: 50%;
+    filter: blur(20px);
+    position: absolute;
+    animation-name: shapeanime;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+@keyframes shapeanime {
+    0% {
+        transform: translate(-10%, 10%);
+    }
+    100% {
+        transform: translate(10%, -10%);
+    }
+}
+
+
+#page1 video {
+    position: relative;
+    width: 100%;
+    border-radius: 30px;
+    margin-top: 4vw;
+}
+
+/*  ===Page 2===*/
+
+#page2 {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #EFEAE3;
+}
+
+#page2 #moving-text {
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+#page2 #moving-text::-webkit-scrollbar {
+    display: none;
+}
+
+#page2 .con {
+    margin-top: 10vw;
+    white-space: nowrap;
+    display: inline-block;
+    animation-name: move;
+    animation-duration: 10s; /* Adjust the duration as needed */
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: 0s, 5s, 10s; 
+}
+
+#moving-text h1 {
+    font-size: 9vw;
+    font-family: displayMedium;
+    display: inline-block;
+}
+
+#moving-text .gola {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #FE330A;
+    display: inline-block;
+    margin: 0 3vw;
+}
+
+@keyframes move {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/*ABbout the animation here a div made in that three cons are made here white spaces are removed and display made inline block*/
+
+#page2 .page-bottom {
+    margin-top: 15vw;
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+#page2 .page-bottom #page-right p {
+    position: absolute;
+    top: 0;
+    font-family: displayMedium;
+    font-size: 4.3vw;
+    font-weight: 500;
+    letter-spacing: -2px;
+    padding: 10px 50px;
+    line-height: 1;
+    width: 60vw;
+    z-index: 5;
+}
+
+#page2 .page-bottom #page-left img {
+    height: 200px;
+    width: 300px;
+    border-radius: 30px;
+}
+
+#page2 .page-bottom #page-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 0 70px;
+}
+
+#page2 .page-bottom #page-left p {
+   font-family: displayRoman;
+   font-size: 1.2vw;
+   width: 20vw;
+}
+
+#page2 .page-bottom #page-right .shape1 {
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background-color: #FE330A;
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    z-index: 1;
+    filter: blur(20px);
+    animation-name: move1;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#page2 .page-bottom #page-right .shape2 {
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background-color: #FE822A;
+    position: absolute;
+    left: 30%;
+    top: 15%;
+    filter: blur(20px);
+    animation-name: move2;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#page2 .page-bottom #page-right .shape3 {
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background-color: #fe352a81;
+    position: absolute;
+    left: 33%;
+    top: 20%;
+    filter: blur(20px);
+    animation-name: move1;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes move1 {
+    from{
+        transform: translate(-10%,10%) skew(0deg);
+    }
+    to{
+        transform: translate(10%,-10%) skew(10deg);
+    }
+    
+}
+
+@keyframes move2 {
+    from{
+        transform: translate(-10%,10%) skew(0deg);
+    }
+    to{
+        transform: translate(10%,-10%) skew(10deg);
+    }
+    
+}
+
+#page3 {
+    min-height: 140vh;
+    width: 100%;
+    background-color: #EFEAE3;
+    padding: 4vw 0;
+    font-family: displayMedium;
+    position: relative;
+}
+
+.elem {
+    height: 150px;
+    width: 100%;
+    position: relative;
+
+    border-bottom: 1px solid #38383864;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 2vw;
+}
+
+.elem h2 {
+    font-size: 4vw;
+    position: relative;
+    z-index: 9;
+}
+
+.elem .overlay {
+    height: 100%;
+    width: 100%;
+    background-color: orange;
+    position: absolute;
+    left: 0;
+    top: -100%;
+    transition: all ease 0.25s;
+}
+
+.elem:hover .overlay {
+    top: 0;
+}
+
+#page3 .btn {
+    margin: 3vw 2vw;
+    font-size: 17px;
+    padding: 10px 20px;
+    border: 1px solid rgba(128, 128, 128, 0.742);
+    border-radius: 30px;
+    width: fit-content;
+    font-weight: 200;
+    font-family: displayRoman;
+    position: relative;
+    transform: scale(1);
+    transition: all ease 0.3s;
+}
+
+#page3 .btn:hover {
+   transform: scale(1.1);
+   background-color: black;
+   color: #EFEAE3;
+
+}
+
+#page3 .btn:hover span i {
+    transform: translate(30%);
+}
+
+#page3 .btn span {
+    margin-left: 5px;
+    transition: all ease 0.3s;
+}
+
+#fixed-image {
+    height: 30vw;
+    width: 24vw;
+    /* background-color: red; */
+    border-radius: 15px;
+    position: fixed;
+    z-index: 99;
+    left: 50%;
+    top: 25%;
+    display: none;
+    background-size: cover;
+    background-position: center;
+}
+
+#page4 {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #EFEAE3;
+    padding: 10px 20px;
+}
+
+#page4 #container {
+    min-height: 120vh;
+    width: 100%;
+    background-color: #000000;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    transition: all ease 0.3s;
+    
+}
+
+#page4 #container .left {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    padding: 100px 0 40px;  
+    gap: 100px; 
+    transition: all ease 0.3s;
+}
+
+#page4 #container .left h2 {
+    font-size: 5rem;
+    color: #504A45;
+    font-family: displayMedium;
+    border-left: 4px solid #504A45;
+    padding-left: 10px;
+    border-radius: 1px;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+}
+
+#page4 #container .left h2:hover {
+    color: white;
+    border-left-color: #FE330A;
+}
+
+#page4 #container .left .head2:hover {
+    color: white;
+    border-left-color: #FE330A;
+}
+
+#page4 #container .left .head3:hover {
+    color: white;
+    border-left-color: #FE330A;
+}
+
+
+#page4 #container .left p {
+    font-size: 1.3rem;
+    color: #ffffff;
+    font-family: displayRoman;
+    text-wrap: wrap;
+    padding: 0 150px;
+    transition: all ease 0.3s;
+}
+
+#page4 #container .right {
+    transition: all ease 0.3s;
+}
+
+#page4 #container .right .img {
+    position: absolute;
+    height: 100%;
+    width: 60%;
+    right: 0;
+    top: 0;
+    border-radius: 20px;
+    transition: all ease 0.3s;
+}
+
+.swiper {
+    min-height: 70vh;
+    min-width: 100%;
+    background-color: #EFEAE3;
+    cursor: none;
+    overflow-x: auto;
+}
+
+.swiper .swiper-wrapper {
+    padding: 270px 140px; 
+}
+
+.swiper .swiper-wrapper .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    border-left: 1px solid #2b2a2a4d;
+    padding-left: 30px;
+}
+
+.swiper .swiper-slide p {
+    font-size: 20px;
+    font-family: displayRoman;
+    font-weight: 100;
+    width: 70%;
+    text-align: start;
+    
+}
+
+.swiper .swiper-slide img {
+    width: 200px;
+}
+
+.swiper .hea {
+    padding: 180px 0 0;
+    margin-left: 100px;
+    position: absolute;
+    display: flex;
+    gap: 50px;
+    
+}
+
+
+.swiper .hea .red-dot {
+    background-color: #fe622a;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    position: absolute;
+    left: -1rem;
+    bottom: 5px;
+}
+
+.swiper .hea h2 {
+    text-transform: uppercase;
+    font-family: displayRoman;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.swiper .movable {
+    position: fixed;
+    background-color: #FE330A;
+    height: 100px;
+    width: 100px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    z-index: 7;
+}
+
+#page6 {
+    width: 100%;
+    height:100vh;
+    z-index: -1;
+}
+
+.footer {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    color: white;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 40px;
+}
+
+.footer .first-footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 70vw;
+    text-align: left;
+    position: relative;
+}
+
+.footer .first-footer h3 {
+    font-size: 3vw;
+    font-family: displayMedium;
+}
+
+
+.footer .middle h1 {
+    width: 100%;
+    font-size: 22vw;
+    font-family: displayMedium;
+}
+.footer .middle {
+    border-bottom: 1px solid #ffffffbc;
+}
+
+.footer .first-footer .left {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
+
+.footer input {
+    font-size: 15px;
+    background: transparent;
+    color: #ffffff;
+    border: none;
+}
+
+.first-footer .left div {
+    border-bottom: 1px solid #ffffffbc;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+.first-footer i {
+    font-size: 20px;
+}
+
+.footer .foot {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 250px;
+    padding: 10px 50px;
+    font-size: 20px;
+   
+}
+
+
+.footer .foot a{
+    text-decoration: none;
+    color: #ffffff; 
+}
+
+.footer .sha{
+  z-index: -1;
+  position: absolute;
+  filter: blur(40px);
+  width: 100%; 
+  height:400px;
+  animation-name: shapeanime1;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+.footer .sha1{
+    z-index: -1;
+    position: absolute;
+    filter: blur(20px);
+    width: 100%; 
+    height:100px;
+  }
+
+@keyframes shapeanime1 {
+    0% {
+        transform: translateY(30%);
+        transform: skewY(10);
+    }
+    100% {
+        transform: translateY(-30%);
+        transform: skewY(-10);
+    }
+}
+
+.loader {
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    transition: all ease 3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader h1 {
+    background-image: linear-gradient(to right, #ff6347, #ffa500);
+    background-clip: text;
+    color: transparent;
+    font-size: 8vw;
+    text-align: center;
+    transition: all ease;
+}
+
+
+
+
+
+
